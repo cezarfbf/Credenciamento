@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FrameworkConfigService, FrameworkConfigSettings } from 'src/fw/service/framework-config.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Credenciamento';
+  constructor(private frameworkConfigService: FrameworkConfigService) {
+
+    let config:FrameworkConfigSettings = {
+      socialIcons: [
+        {imageFile: '', alt: 'Facebook', link: ''},
+        {imageFile: '', alt: 'Youtube', link: ''},
+        {imageFile: '', alt: 'Twitter', link: ''}
+      ],
+      showLanguageSelector: true,
+      showStatusBar: true,
+      showUserControls: true,
+      showStatusBarBreakpoint: 800
+    };
+    frameworkConfigService.configure(config);
+
+  }
 }
