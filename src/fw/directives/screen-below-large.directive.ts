@@ -1,5 +1,4 @@
 import { Directive, Input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
-
 import { ScreenService } from '../services/screen.service';
 import { Subscription } from 'rxjs';
 
@@ -12,7 +11,7 @@ export class ScreenBelowLarge implements OnDestroy {
                 private template: TemplateRef<Object>,
                 private screenService: ScreenService) {
 
-    screenService.resize$.subscribe(() => this.onResize());
+    this.screenSubscription = screenService.resize$.subscribe(() => this.onResize());
 
   }
 

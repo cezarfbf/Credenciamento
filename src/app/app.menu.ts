@@ -3,19 +3,25 @@ import { MenuItem } from 'src/fw/services/menu.service';
 export let initialMenuItems: Array<MenuItem> = [
     {
         text: 'Dashboard',
-        icon: 'glyphicon-dashboard',
+        icon: 'fa-home',
         route: '/dashboard',
         submenu: null
     },
     {
         text: 'User',
-        icon: 'glyphicon-user',
+        icon: 'fa-user',
         route: '/user',
         submenu: null
     },
     {
+        text: 'Customers',
+        icon: 'fa-briefcase',
+        route: '/customers',
+        submenu: null
+    },
+    {
         text: 'Settings',
-        icon: 'glyphicon-wrench',
+        icon: 'fa-wrench',
         route: '/settings',
         submenu: null
     }
