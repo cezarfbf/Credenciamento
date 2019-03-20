@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FrameworkConfigService, FrameworkConfigSettings } from 'src/fw/service/framework-config.service';
+import { FrameworkConfigService, FrameworkConfigSettings } from 'src/fw/services/framework-config.service';
 
 @Component({
   selector: 'app-root',
