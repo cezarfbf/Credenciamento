@@ -1,19 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
+import { ScreenLarge } from './directives/screen-large.directve';
+import { ScreenBelowLarge } from './directives/screen-below-large.directive';
+
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
 import { ContentComponent } from './content/content.component';
 import { TitleBarComponent } from './title-bar/title-bar.component';
-import { FrameworkConfigService } from './services/framework-config.service';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { StatusBarComponent } from './status-bar/status-bar.component';
-import { ScreenService } from './services/screen.service';
-import { ScreenLarge } from './directives/screen-large.directve';
-import { ScreenBelowLarge } from './directives/screen-below-large.directive';
-import { MenuService } from './services/menu.service';
 import { MenuComponent } from './menus/menu/menu.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
-import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
+import { SingInComponent } from './users/sing-in/sing-in.component';
+import { RegisterUserComponent } from './users/register-user/register-user.component';
+
+import { FrameworkConfigService } from './services/framework-config.service';
+import { ScreenService } from './services/screen.service';
+import { MenuService } from './services/menu.service';
 
 @NgModule({
   declarations: [
@@ -25,12 +34,17 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     ScreenLarge,
     ScreenBelowLarge,
     MenuComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    PopupMenuComponent,
+    SingInComponent,
+    RegisterUserComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    FormsModule
   ],
   exports: [
     FrameworkBodyComponent

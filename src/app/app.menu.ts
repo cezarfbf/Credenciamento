@@ -4,25 +4,70 @@ export let initialMenuItems: Array<MenuItem> = [
     {
         text: 'Dashboard',
         icon: 'fa-home',
-        route: '/dashboard',
+        route: 'dashboard',
         submenu: null
     },
     {
-        text: 'User',
+        text: 'Usuários',
         icon: 'fa-user',
-        route: '/user',
+        route: 'user',
         submenu: null
     },
     {
-        text: 'Customers',
+        text: 'Credenciado',
         icon: 'fa-briefcase',
-        route: '/customers',
-        submenu: null
+        route: null,
+        submenu: [
+            {
+                text: 'Selecionar',
+                icon: 'fa-arrow-alt-circle-right',
+                route: null,
+                submenu: [
+                    {
+                        text: 'Interior',
+                        icon: 'fa-tractor',
+                        route: 'customer-selection/country-side',
+                        submenu: null
+                    },
+                    {
+                        text: 'RMR',
+                        icon: 'fa-city',
+                        route: 'customer-selection/city',
+                        submenu: null  
+                    }
+                ]
+            },
+            {
+                text: 'Cadastrar',
+                icon: 'fa-pen',
+                route: 'customer-options/register',
+                submenu: null  
+            },
+            {
+                text: 'Editais',
+                icon: 'fa-book-open',
+                route: 'customer-options/announcement',
+                submenu: null 
+            }
+        ]
     },
     {
-        text: 'Settings',
+        text: 'Manutenção',
         icon: 'fa-wrench',
-        route: '/settings',
-        submenu: null
+        route: null,
+        submenu: [
+            {
+                text: 'Acesso',
+                icon: 'fa-book-open',
+                route: 'access',
+                submenu: null 
+            },
+            {
+                text: 'Configurar',
+                icon: 'fa-cog',
+                route: 'settings',
+                submenu: null 
+            }
+        ]
     }
 ];
