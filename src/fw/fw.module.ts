@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
@@ -23,6 +23,8 @@ import { RegisterUserComponent } from './users/register-user/register-user.compo
 import { FrameworkConfigService } from './services/framework-config.service';
 import { ScreenService } from './services/screen.service';
 import { MenuService } from './services/menu.service';
+import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
+import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
 
 @NgModule({
   declarations: [
@@ -37,17 +39,21 @@ import { MenuService } from './services/menu.service';
     MenuItemComponent,
     PopupMenuComponent,
     SingInComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    DynamicFormComponent,
+    DynamicFieldComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     AppRoutingModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
-    FrameworkBodyComponent
+    FrameworkBodyComponent,
+    DynamicFormComponent
   ],
   providers: [
     FrameworkConfigService,

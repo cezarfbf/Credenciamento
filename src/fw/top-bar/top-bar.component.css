@@ -26,3 +26,8 @@ a {
     height: 16px;
     vertical-align: middle;
 }
+
+.sing-out{
+    margin-left: 12px;
+    cursor: pointer;
+}

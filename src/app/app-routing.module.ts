@@ -10,20 +10,34 @@ import { AccessComponent } from './access/access.component';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 import { SingInComponent } from 'src/fw/users/sing-in/sing-in.component';
 import { RegisterUserComponent } from 'src/fw/users/register-user/register-user.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 const appRoutes: Routes = [
     { path: 'singin', component: SingInComponent },
     { path: 'register', component: RegisterUserComponent },
-    { path: 'authenticated', component: AuthenticatedUserComponent,
+    { path: 'authenticated', component: AuthenticatedUserComponent, 
+      canActivate: [AuthGuard],
        children: [
-        { path: 'dashboard', component: DashboardComponent },
-        { path: 'customer-options/:option', component: CustomerOptionsComponent },
-        { path: 'customer-selection/:select', component: CustomerSelectionComponent },
-        { path: 'access', component: AccessComponent },
-        { path: 'settings', component: SettingsComponent },
-        { path: 'customers', component: CustomerComponent },        
-        { path: 'user', component: UserComponent }        
-       ] },  
+         {path: '', canActivateChild: [AuthGuard],
+           children: [
+            { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+            { path: 'dashboard', component: DashboardComponent },
+            { path: 'customer-options', component: CustomerOptionsComponent
+            //    children: [
+            //     { path: 'customer', component: CustomerComponent }
+            //    ] 
+            },
+            { path: 'customer-selection/:select', component: CustomerSelectionComponent },
+            { path: 'access', component: AccessComponent },
+            { path: 'settings', component: SettingsComponent },       
+            { path: 'user', component: UserComponent }, 
+            { path: 'customer-detail/:id/:operation', component: CustomerDetailComponent},
+            { path: 'customer', component: CustomerComponent }
+           ]
+          }               
+        ] 
+    },  
     { path: '', component: SingInComponent },
     { path: '**', component: SingInComponent }
     
@@ -34,12 +48,13 @@ const appRoutes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComonents = [DashboardComponent,
+export const routingComonents = [AuthenticatedUserComponent,
+                                 DashboardComponent,
                                  CustomerComponent,
                                  SettingsComponent,
                                  UserComponent,
                                  CustomerOptionsComponent,
                                  CustomerSelectionComponent,
                                  AccessComponent,
-                                 AuthenticatedUserComponent
+                                 CustomerDetailComponent
                                 ]

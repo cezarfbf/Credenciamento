@@ -6,14 +6,14 @@
     flex-grow: 1;
     display: flex;
     min-height: 80px;
-    background-color: #eee;
+    background-color: rgb(245, 243, 243);
 }
 
 .title-bar-small {
     flex-grow: 1;
     display: flex;
     min-height: 55px;
-    background-color: #eee;
+    background-color: rgb(245, 243, 243);
 }
 
 .menu-area {

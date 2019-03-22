@@ -1,0 +1,11 @@
+<h3>Credenciado</h3>
+
+<fw-dynamic-form
+  [vm]="customer"
+  [vmDefinition]="customerDefinition"
+  [operation]="operation"
+  [errorMessage]="errorMessage"
+  (update)="updateCustomer($event)"
+  (create)="createCustomer($event)"
+>
+</fw-dynamic-form>

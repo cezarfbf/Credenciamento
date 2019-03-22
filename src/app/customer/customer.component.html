@@ -1,3 +1,46 @@
-<p>
-  customer works!
-</p>
+<h3>Cadastro</h3>
+<button class="btn btn-primary" (click)="createCustomer()">Adicionar Credenciado</button>
+<table>
+  <thead>
+  <tr>
+    <th style="width: 25px">Id</th>
+    <th style="width: 200px">Nome</th>
+    <th style="width: 100px">Telefone</th>
+    <th style="width: 70px">Especialidade</th>
+    <th style="width: 70px">Registro</th>
+    <th style="min-width: 90px"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of customers">
+    <td>{{ row.id }}</td>
+    <td>{{ row.name }}</td>
+    <td>{{ row.phone }}</td>
+    <td>{{ row.speciality }}</td>
+    <td>{{ row.register }}</td>
+    <td *ngIf="row.id != deleteId">
+      <button class="btn btn-sm btn-primary"
+        (click)="showCustomerDetail(row.id)">
+          Details
+      </button>
+      <button class="btn btn-sm btn-warning"
+        (click)="editCustomer(row.id)">
+          Edit
+      </button>
+      <button class="btn btn-sm btn-danger"
+        (click)="deleteCustomerQuestion(row.id)">
+          Delete
+      </button>
+    </td>
+    <td *ngIf="row.id === deleteId && !isDeleting">
+      Excluir este Credenciado?
+      <button class="btn btn-sm" (click)="cancelDelete()">Não</button>
+      <button class="btn btn-sm btn-danger" (click)="deleteCustomer(row.id)">Sim</button>
+      <p *ngIf="deleteError">{{ deleteError }}</p>
+    </td>
+    <td *ngIf="row.id === deleteId && isDeleting">
+      Deleting...
+    </td>
+  </tr>
+  </tbody>
+</table>
