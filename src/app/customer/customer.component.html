@@ -1,6 +1,41 @@
 <h3>Cadastro</h3>
-<button class="btn btn-primary" (click)="createCustomer()">Adicionar Credenciado</button>
-<table>
+<button mat-raised-button (click)="createCustomer()">Adicionar Credenciado</button>
+
+<mat-list>
+  <mat-list-item *ngFor="let row of customers" >
+    <!-- <img matListAvatar src="{{user.avatar}}" alt="avatar"> -->
+    <p matLine>{{row.id}}</p>
+    <h3 matLine> {{ row.name }}</h3>
+    <h1 matLine> {{ row.phone }}</h1>
+    <h1 matLine> {{ row.speciality }}</h1>
+    <h1 matLine> {{ row.register }}</h1>
+    <div matLine *ngIf="row.id != deleteId" class="button-row">
+      <button mat-raised-button 
+      (click)="showCustomerDetail(row.id)">
+        Details
+      </button>
+      <button mat-raised-button color="accent"
+        (click)="editCustomer(row.id)">
+          Edit
+      </button>
+      <button mat-raised-button color="warn"
+        (click)="deleteCustomerQuestion(row.id)">
+          Delete
+      </button>
+    </div>
+    <div matLine *ngIf="row.id === deleteId && !isDeleting">
+        Excluir este Credenciado?
+        <button mat-raised-button (click)="cancelDelete()">Não</button>
+        <button mat-raised-button color="warn" (click)="deleteCustomer(row.id)">Sim</button>
+        <p *ngIf="deleteError">{{ deleteError }}</p>
+    </div>
+    <div matLine *ngIf="row.id === deleteId && isDeleting">
+        Deleting...
+    </div>
+  </mat-list-item>
+</mat-list>
+
+<!-- <table>
   <thead>
   <tr>
     <th style="width: 25px">Id</th>
@@ -43,4 +78,4 @@
     </td>
   </tr>
   </tbody>
-</table>
+</table> -->

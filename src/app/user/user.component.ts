@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../view-model/user.model';
+import { ReqresDataService } from '../services/reqres-data.service';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  userList: User[];
+    
+  constructor(private reqresService: ReqresDataService) { } 
 
   ngOnInit() {
+    
+    this.reqresService.getUsers().subscribe( resp => this.userList = resp.data);
+        
   }
 
 }

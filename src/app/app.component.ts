@@ -14,9 +14,9 @@ export class AppComponent {
 
     let config:FrameworkConfigSettings = {
       socialIcons: [
-        {imageFile: 'assets/facebook.png', alt: 'Facebook', link: ''},
-        {imageFile: 'assets/youtube.png', alt: 'Youtube', link: ''},
-        {imageFile: 'assets/twitter.png', alt: 'Twitter', link: ''}
+        {imageFile: 'assets/facebook.png', alt: 'Facebook', link: 'https://pt-br.facebook.com/sesipeoficial/'},
+        {imageFile: 'assets/youtube.png', alt: 'Youtube', link: 'https://www.youtube.com/channel/UC6VRuvR9oLPSassuoGC5qww'},
+        {imageFile: 'assets/twitter.png', alt: 'Twitter', link: 'https://twitter.com/sousesi'}
       ],
       showLanguageSelector: true,
       showStatusBar: true,

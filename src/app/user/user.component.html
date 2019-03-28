@@ -1,3 +1,28 @@
-<p>
-  user works!
-</p>
+<h2>Users</h2>
+
+<mat-list>
+    <mat-list-item *ngFor="let user of userList" >
+      <img matListAvatar src="{{user.avatar}}" alt="avatar">
+      <p matLine>{{user.id}}</p>
+      <h3 matLine> {{user.first_name}} {{user.last_name}}</h3>
+    </mat-list-item>
+</mat-list>
+
+<!-- <div *ngFor="let user of userList">
+ <mat-card class="example-card" >
+   <mat-card-header>
+     <div mat-card-avatar class="example-header-image"></div>
+     <mat-card-title>{{user.first_name}} {{user.last_name}}</mat-card-title>
+     <mat-card-subtitle>{{user.id}}</mat-card-subtitle>
+   </mat-card-header>
+   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+   <mat-card-content>
+     <p>
+     </p>
+   </mat-card-content>
+   <mat-card-actions>
+     <button mat-button>LIKE</button>
+     <button mat-button>SHARE</button>
+   </mat-card-actions>
+ </mat-card>
+</div> -->

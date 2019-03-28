@@ -1,0 +1,32 @@
+
+mat-list-item {
+    height: 100vh;
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    background-color: darkgrey;
+}
+
+.mat-list-base .mat-list-item {
+    background-color: lightgray;
+    border-radius: 8px;
+    margin: 4px;
+    box-shadow: #333;
+    font-weight: bold;
+  }
+
+
+.example-card {
+    max-width: 400px;
+    border-radius: 2px;
+    padding: 4px;
+    box-shadow: 2px;
+  }
+  
+.example-header-image {
+    background-size: cover;
+  }

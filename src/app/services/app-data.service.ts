@@ -9,7 +9,7 @@ export class AppDataService {
 
   private customers : Array<Customer> = [
     { id: 100, name:"João Switzerland", phone: "96456-6589", speciality: "Médico do Trabalho", register: "13269"},
-    { id: 651, name:"Francisco Luxembourg", phone: "96567-6589", speciality: "Técnico Sgurança", register: "43234" },
+    { id: 651, name:"Francisco Luxembourg", phone: "96567-6589", speciality: "Técnico Segurança", register: "43234" },
     { id: 687, name:"Maria Australia", phone: "96454-8659", speciality: "Terapeuta Ocupacional", register: "525535" },
     { id: 568, name:"Michel Singapore", phone: "96454-5679", speciality: "Socorrista", register: "" },
     { id: 132, name:"Marcos Czech Republic", phone: "96765-6589", speciality: "Médico do Trabalho", register: "5433" },
@@ -47,9 +47,11 @@ export class AppDataService {
     return of(customer);
   }
 
-  updateCustomer(updatedCustomer: Customer) : Observable<any> {
+  updateCustomer(updatedCustomer: Customer) : Observable<Customer> {
     var customer = this.customers.find(c => c.id == updatedCustomer.id);
     Object.assign(customer, updatedCustomer);
+    // var index = this.customers.findIndex(c => c.id == updatedCustomer.id);
+    // this.customers[index] = updatedCustomer; 
     return of(customer).pipe(delay(2000));
     //return Observable.of({}).delay(2000).flatMap(x=>Observable.throw(''));
   }
