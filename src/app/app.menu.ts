@@ -26,13 +26,13 @@ export let initialMenuItems: Array<MenuItem> = [
                     {
                         text: 'Interior',
                         icon: 'fa-tractor',
-                        route: '/authenticated/customer-selection/country-side',
+                        route: '/authenticated/customer-list/country-side',
                         submenu: null
                     },
                     {
                         text: 'RMR',
                         icon: 'fa-city',
-                        route: '/authenticated/customer-selection/city',
+                        route: '/authenticated/customer-list/city',
                         submenu: null  
                     }
                 ]

@@ -1,0 +1,5 @@
+
+<fw-panel *ngFor="let customer of customers; let i=index">
+  <app-customer-panel [customer]="customer" [index]="i+1">
+  </app-customer-panel>
+</fw-panel>

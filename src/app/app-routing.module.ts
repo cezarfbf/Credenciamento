@@ -4,14 +4,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SettingsComponent } from './settings/settings.component';
 import { UserComponent } from './user/user.component';
-import { CustomerOptionsComponent } from './customer-options/customer-options.component';
-import { CustomerSelectionComponent } from './customer-selection/customer-selection.component';
 import { AccessComponent } from './access/access.component';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 import { SingInComponent } from 'src/fw/users/sing-in/sing-in.component';
 import { RegisterUserComponent } from 'src/fw/users/register-user/register-user.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 const appRoutes: Routes = [
     { path: 'singin', component: SingInComponent },
@@ -23,17 +22,12 @@ const appRoutes: Routes = [
            children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
             { path: 'dashboard', component: DashboardComponent },
-            { path: 'customer-options', component: CustomerOptionsComponent
-            //    children: [
-            //     { path: 'customer', component: CustomerComponent }
-            //    ] 
-            },
-            { path: 'customer-selection/:select', component: CustomerSelectionComponent },
             { path: 'access', component: AccessComponent },
             { path: 'settings', component: SettingsComponent },       
             { path: 'user', component: UserComponent }, 
             { path: 'customer-detail/:id/:operation', component: CustomerDetailComponent},
-            { path: 'customer', component: CustomerComponent }
+            { path: 'customer', component: CustomerComponent },
+            { path: 'customer-list/:option', component: CustomerListComponent }
            ]
           }               
         ] 
@@ -53,8 +47,6 @@ export const routingComonents = [AuthenticatedUserComponent,
                                  CustomerComponent,
                                  SettingsComponent,
                                  UserComponent,
-                                 CustomerOptionsComponent,
-                                 CustomerSelectionComponent,
                                  AccessComponent,
                                  CustomerDetailComponent
                                 ]

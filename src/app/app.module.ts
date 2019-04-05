@@ -16,13 +16,22 @@ import { UserApi } from 'src/fw/users/user-api';
 import { AuthGuard } from './services/auth-guard.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReqresDataService } from './services/reqres-data.service';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerPanelComponent } from './panels/customer-panel/customer-panel.component';
+import { ImagePanelComponent } from './panels/image-panel/image-panel.component';
+import { ChartPanelComponent } from './panels/chart-panel/chart-panel.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComonents,
-    AuthenticatedUserComponent
+    AuthenticatedUserComponent,
+    CustomerListComponent,
+    CustomerPanelComponent,
+    ImagePanelComponent,
+    ChartPanelComponent
   ],
   imports: [
     BrowserModule,

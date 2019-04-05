@@ -52,6 +52,7 @@ span {
 
 .menu-item.vertical-menu {
     padding: 6px 6px 6px 0;
+    width: 200px;
 }
 
 .menu-item:hover {

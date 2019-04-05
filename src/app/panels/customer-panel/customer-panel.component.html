@@ -1,0 +1,32 @@
+<div *screenLarge class="group">
+  <div class="index">
+    <span>{{ index }}</span>
+  </div>
+  <div>
+    <img class="customer-image" [src]="'/assets/' + customer.name + '.jpg'" [alt]="customer.name">
+  </div>
+  <div class="customer-name">
+    <span>{{ customer.name }}</span>
+  </div>
+  <div class="epi-index">
+    <span>{{ customer.register }}</span>
+  </div>
+</div>
+
+<div *screenBelowLarge class="group-small">
+  <div class="title-group-small">
+    <div class="index-small">
+      <span>{{ index }}</span>
+    </div>
+    <div class="customer-name-small">
+      <span>{{ customer.name }}</span>
+    </div>
+  </div>
+  <div>
+    <img class="customer-image-small" [src]="'/assets/' + customer.name + '.jpg'" [alt]="customer.name">
+  </div>
+  
+  <div class="epi-index-small">
+    <span>{{ customer.register }}</span>
+  </div>
+</div>
