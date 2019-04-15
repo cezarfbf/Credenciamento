@@ -3,8 +3,10 @@ import { Customer } from '../view-model/customer';
 import { UserService } from './user.service';
 import { Observable, of } from 'rxjs';
 import { delay, tap } from 'rxjs/internal/operators';
+import { UserSettings } from '../view-model/user-settings';
+import { HttpClient } from '@angular/common/http';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class AppDataService {
 
   private customers : Array<Customer> = [
@@ -20,7 +22,8 @@ export class AppDataService {
     { id: 180, name:"Gal Norway", phone: "96544-6987", speciality: "Médico do Trabalho", register: "76768" }
   ];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private http: HttpClient) {
   }
 
   createCustomer(vm: Customer) : Observable<any> {
@@ -54,5 +57,14 @@ export class AppDataService {
     // this.customers[index] = updatedCustomer; 
     return of(customer).pipe(delay(2000));
     //return Observable.of({}).delay(2000).flatMap(x=>Observable.throw(''));
+  }
+
+  postUserSettingsForm(userSettings: UserSettings) : Observable<any>{
+    return this.http.post('https://putsreq.com/iM8lgFdUToyosjpgNRew', userSettings);
+    // return of(userSettings);
+  }
+
+  getSubscriptionTypes(): Observable<string[]>{
+    return of(['Monthly','Annual','Lifetime']);
   }
 }

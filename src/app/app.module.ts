@@ -20,8 +20,10 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerPanelComponent } from './panels/customer-panel/customer-panel.component';
 import { ImagePanelComponent } from './panels/image-panel/image-panel.component';
 import { ChartPanelComponent } from './panels/chart-panel/chart-panel.component';
-
-
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { RatingModule } from 'ngx-bootstrap/rating'
 
 @NgModule({
   declarations: [
@@ -43,13 +45,18 @@ import { ChartPanelComponent } from './panels/chart-panel/chart-panel.component'
     ScrollingModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
+    RatingModule.forRoot()    
   ],
   providers: [
     UserService,
     {provide:UserApi, useExisting: UserService},
     AuthGuard,
-    ReqresDataService
+    ReqresDataService,
+    BsLocaleService
   ],
   bootstrap: [AppComponent]
 })

@@ -23,9 +23,9 @@ export class DynamicFormComponent implements OnChanges, OnInit {
   submitted = false;
   vmCopy: any;
   
-  constructor(private router: Router,
-              private route: ActivatedRoute,
-              private location: Location) { }
+  constructor(public router: Router,
+              public route: ActivatedRoute,
+              public location: Location) { }
   
   clearForm() {
     let group = {};

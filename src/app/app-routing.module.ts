@@ -13,6 +13,7 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
 import { CustomerListComponent } from './customer-list/customer-list.component';
 
 const appRoutes: Routes = [
+    { path: 'settings', component: SettingsComponent }, 
     { path: 'singin', component: SingInComponent },
     { path: 'register', component: RegisterUserComponent },
     { path: 'authenticated', component: AuthenticatedUserComponent, 
@@ -23,18 +24,17 @@ const appRoutes: Routes = [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full'},
             { path: 'dashboard', component: DashboardComponent },
             { path: 'access', component: AccessComponent },
-            { path: 'settings', component: SettingsComponent },       
             { path: 'user', component: UserComponent }, 
+            { path: 'settings', component: SettingsComponent }, 
             { path: 'customer-detail/:id/:operation', component: CustomerDetailComponent},
             { path: 'customer', component: CustomerComponent },
             { path: 'customer-list/:option', component: CustomerListComponent }
            ]
           }               
         ] 
-    },  
+    },
     { path: '', component: SingInComponent },
-    { path: '**', component: SingInComponent }
-    
+    { path: '**', component: SingInComponent }   
 ];
 
 @NgModule({

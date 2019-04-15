@@ -25,7 +25,7 @@ export class ScreenService {
         }
     }
 
-    isLarge() : boolean {
+    public isLarge() : boolean {
         return this.screenWidth >= this.largeBreakpoint;
     }
 

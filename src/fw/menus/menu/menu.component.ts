@@ -8,7 +8,7 @@ import { MenuService } from 'src/fw/services/menu.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private menuService: MenuService) { }
+  constructor(public menuService: MenuService) { }
 
   ngOnInit() {
   }
